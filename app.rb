@@ -2,9 +2,11 @@ require 'sinatra'
 
 get '/guild-wars' do
   message = '@channel: Come play guild wars with me!'
+  console.log(ENV['guild_wars_hook'])
   slack = Slackoff::Slack.new
   hook = slack.incoming_webhook(ENV['guild_wars_hook'])
-  hook.send(text: message)
-  status 200
+  r = hook.send(text: message)
+  puts r.body
+  status r.status
   body ''
 end
