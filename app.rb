@@ -8,7 +8,7 @@ post '/guild-wars' do
 
   text = "@channel: Hey, it's #{slash_data.user_name}. Come play guild wars with me!"
   username = 'Guild Wars 2 Notifications'
-  channel = 'guild-wars'
+  channel = '#guild-wars'
 
   message = Slackoff::Post.new
   message.text = text
