@@ -1,6 +1,6 @@
 require 'sinatra'
 
-post '/guild_wars' do
+post '/guild-wars' do
   message = '@channel: Come play guild wars with me!'
   console.log(ENV['guild_wars_hook'])
   slack = Slackoff::Slack.new
